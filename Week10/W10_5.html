@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'red'
+            });
+            $('#toggleButton').click(function () {
+                $('#box').toggle(1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="toggleButton">Toggle Red Square</button>
+</body>
+</html>

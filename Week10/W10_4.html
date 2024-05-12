@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#hideButton').click(function () {
+                $('.paragraph').hide('slow');
+            });
+            $('#showButton').click(function () {
+                $('.paragraph').show('slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="paragraph">
+        <p>This is a paragraph that will be hidden or shown.</p>
+    </div>
+    <button id="hideButton">Hide Paragraph</button>
+    <button id="showButton">Show Paragraph</button>
+</body>
+</html>

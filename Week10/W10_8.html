@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #myTable.th {
+            background-color: grey;
+            font-weight: bold;
+        }
+
+        td, th {
+            padding: 8px;
+            text-align: center;
+            border-right: 1px solid #ddd;
+            min-width: 60px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#toggleOdd').click(function() {
+                // 행이 아닌 열을 토글합니다.
+                $('#myTable tr').each(function(index) {
+                    // 홀수 행을 토글합니다.
+                    if (index % 2 !== 0) { // 0-index 기반, 홀수 행 선택
+                        $(this).toggle();
+                    }
+                });
+            });
+
+            $('#changeEvenColor').click(function() {
+                $('#myTable tr').each(function(index) {
+                    // 짝수 행의 배경색을 변경합니다.
+                    if (index % 2 === 0 && index !== 0) { // 0-index 기반, 첫 행 제외 짝수 행 선택
+                        $(this).css('background-color', 'yellow');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="myTable">
+        <!-- 첫번째 열 -->
+        <tr>
+            <th>Index</th>
+            <th>Data</th>
+        </tr>
+        <!-- 데이터 열 -->
+        <tr>
+            <td>1</td>
+            <td>Row1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Row2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Row3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Row4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Row5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Row6</td>
+        </tr>
+    </table>
+    <button id="toggleOdd">Toggle Odd Rows</button>
+    <button id="changeEvenColor">Change Even Rows Color</button>
+</body>
+</html>

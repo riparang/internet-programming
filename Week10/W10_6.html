@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>w10_6</title>
+    <style>
+        #colorButton {
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            var colors = ['red', 'green', 'blue'];
+            var currentColorIndex = 0;
+
+            $("#colorButton").click(function(){
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+                $(this).css("background-color", colors[currentColorIndex]);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="colorButton">클릭</button>
+</body>
+</html>
